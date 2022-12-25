@@ -1,0 +1,6 @@
+{
+  "InputDir": "input",
+  "OutputDir": "outputdir",
+  "LogFile": "loglog.log",
+  "LogLevel": "debug"
+}
