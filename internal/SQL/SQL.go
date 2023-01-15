@@ -10,7 +10,7 @@ import (
 
 func createstringAge() string {
 	rand.Seed(time.Now().UnixNano())
-	m := rand.Intn(30)
+	m := rand.Intn(5)
 	var s string
 	for i := 1; i < m; i++ {
 		c := 'a' + rune(rand.Intn('z'-'a'+1))
@@ -33,12 +33,14 @@ func Exect() {
 	m := rand.Intn(100)
 
 	name := createstringAge()
-	result, err := db.Exec("insert into users (Name, Age) values ($1, $2)",
+	//result, err := db.Exec("insert into users (Name, Age) values ($1, $2)",
+	//	name, m)
+	_, err = db.Exec("insert into users (Name, Age) values ($1, $2)",
 		name, m)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(result.RowsAffected()) // количество добавленных строк
+	//fmt.Println(result.RowsAffected()) // количество добавленных строк
 
 }

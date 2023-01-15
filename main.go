@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"lib/internal/SQL"
 	"lib/internal/files"
-	"log"
-	"time"
 )
 
 func setupSettings(confFile string) error {
@@ -24,20 +22,22 @@ func setupSettings(confFile string) error {
 
 func main() {
 
-	for i := 1; i < 100; i++ {
+	x := 100000
+	for i := 1; i < x; i++ {
+		fmt.Println("Осталось запросов: ", x-i)
 		run()
 	}
 }
 
 func run() {
 
-	start := time.Now()
+	//start := time.Now()
 
-	fmt.Println(start)
+	//fmt.Println(start)
 
-	if err := setupSettings("settings.json"); err != nil {
-		log.Fatalf("Error loading settings: %v\n", err)
-	}
+	//if err := setupSettings("settings.json"); err != nil {
+	//	log.Fatalf("Error loading settings: %v\n", err)
+	//}
 	//fmt.Println(settings.InputDir)
 	//fmt.Println(settings.filename)
 	//fmt.Println(settings.OutputDir)
